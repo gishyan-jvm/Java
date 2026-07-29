@@ -8,12 +8,25 @@ public class Human {
     protected String lastName;
     protected String gender;
     protected Date age;
+    public static String message;
+    private static int count;
 
-    protected Human(String name, String lastName, String gender, Date age) {
-        this.name = name;
-        this.lastName = lastName;
-        this.gender = gender;
-        this.age = age;
+    public Human() {
+        count++;
+    }
+
+    public Human(String name, String lastName, String gender, Date age) {
+
+    }
+
+    public static Integer sum(int... ints) {
+
+        Integer result = 0;
+
+        for (int anInt : ints) {
+            result += anInt;
+        }
+        return result;
     }
 
     public String getName() {
@@ -53,6 +66,10 @@ public class Human {
 
     public void setAge(Date age) {
         this.age = age;
+    }
+
+    public int getCount() {
+        return count;
     }
 
     @Override
