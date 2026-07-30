@@ -1,5 +1,6 @@
 package com.arthur.education.human;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 public class Human {
@@ -10,13 +11,15 @@ public class Human {
     protected Date age;
     public static String message;
     private static int count;
+    private final LocalDate birthday;
 
-    public Human() {
+    public Human(LocalDate birthday) {
         count++;
+        this.birthday = birthday;
     }
 
-    public Human(String name, String lastName, String gender, Date age) {
-
+    public Human(String name, String lastName, String gender, Date age, LocalDate birthday) {
+        this.birthday = birthday;
     }
 
     public static Integer sum(int... ints) {
@@ -68,7 +71,7 @@ public class Human {
         this.age = age;
     }
 
-    public int getCount() {
+    public static int getCount() {
         return count;
     }
 
